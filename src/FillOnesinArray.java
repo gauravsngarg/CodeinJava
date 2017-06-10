@@ -1,4 +1,4 @@
-
+//http://www.geeksforgeeks.org/fill-array-1s-minimum-iterations-filling-neighbors/
 public class FillOnesinArray {
 
 	// 3 cases
@@ -17,48 +17,56 @@ public class FillOnesinArray {
 	private int answer;
 	private int[] arr;
 
-	public void init(int []arr){
+	/*public static void main(String[] args) {
+
+		int[] arr = { 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1 };
+		FillOnesinArray ob = new FillOnesinArray();
+
+		ob.init(arr);
+		int ans = ob.fillOnesInArray(arr);
+		System.out.print(ans);
+
+	}*/
+
+	public void init(int[] arr) {
 		FLAG = 1;
 		answer = 0;
 		count_zero = 0;
 	}
 
 	public int fillOnesInArray(int[] arr) {
-		
+
 		for (int i = 0; i < arr.length; i++) {
-			if(arr[i] == 0){
+			if (arr[i] == 0) {
 				count_zero++;
-			}
-			else{
-				if(FLAG == 1){
+			} else {
+				if (FLAG == 1) {
 					setAnswer(answer, count_zero);
 					FLAG = 2;
-					
-				}
-				else if(FLAG == 2){
-					if(count_zero%2 == 1){
-						setAnswer(answer, (count_zero/2) + 1);
-					}
-					else if(count_zero%2 == 0){
-						setAnswer(answer, count_zero/2);
+
+				} else if (FLAG == 2) {
+					if (count_zero % 2 == 1) {
+						setAnswer(answer, (count_zero / 2) + 1);
+					} else if (count_zero % 2 == 0) {
+						setAnswer(answer, count_zero / 2);
 					}
 				}
 				count_zero = 0;
 			}
-			
-			if(i== arr.length-1){
+
+			if (i == arr.length - 1) {
 				setAnswer(answer, count_zero);
 			}
-			
+
 		}
 
 		return answer;
 	}
-	public void setAnswer(int ans, int b){
-		if(ans > b){
+
+	public void setAnswer(int ans, int b) {
+		if (ans > b) {
 			answer = ans;
-		}
-		else 
+		} else
 			answer = b;
 	}
 
