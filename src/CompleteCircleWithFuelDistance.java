@@ -11,12 +11,12 @@ public class CompleteCircleWithFuelDistance {
 		}
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		PetrolPump arr[] = { new PetrolPump(4, 6), new PetrolPump(6, 5), new PetrolPump(7, 3),
 				new PetrolPump(4, 5) };
 
 		System.out.println(FuelCircleDetect(arr));
-	}
+	}*/
 
 	public static int FuelCircleDetect(PetrolPump p[]) {
 
