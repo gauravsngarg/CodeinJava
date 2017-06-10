@@ -11,18 +11,16 @@ public class FillOnesinArray {
 	// print count_zero
 
 	// members
-	int count_zero;
+	private int count_zero;
 	// flag represent cases
-	int FLAG;
-	int answer;
-	int[] arr;
+	private int FLAG;
+	private int answer;
+	private int[] arr;
 
 	public void init(int []arr){
 		FLAG = 1;
 		answer = 0;
 		count_zero = 0;
-		
-		//fillOnesInArray(arr);
 	}
 
 	public int fillOnesInArray(int[] arr) {
